@@ -1,4 +1,4 @@
 #!/bin/bash
 echo "Running tests for tennis balls"
-pushd ../code_1/SEVATBR/visual/
+pushd ../1_code/SEVATBR/visual/
 python tennis_ball_test.py
