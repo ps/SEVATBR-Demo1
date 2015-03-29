@@ -11,7 +11,6 @@
 #include <stdio.h>
 #include "robot.h"
 #include "manual.h"
-#include "agent.h"
 #include "coord.h"
 
 // Signal handler for killing the program

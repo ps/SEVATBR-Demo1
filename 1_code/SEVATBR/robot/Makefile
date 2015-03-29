@@ -4,7 +4,7 @@ INCLUDE = -I$(shell pwd)/tbr -I$(shell pwd)/../core -I$(shell pwd)/serial
 SUBDIRS = $(shell pwd)/tbr 
 OBJECTS = robot.o $(shell pwd)/serial/serial.o $(shell pwd)/tbr/tbr.o
 LIBOBJS = librobot.o $(shell pwd)/serial/libserial.o $(shell pwd)/tbr/libtbr.o
-TARGET = librobot.so librobot.a
+TARGET = librobot.a
 
 all: subdirs $(OBJECTS) $(TARGET)
 
