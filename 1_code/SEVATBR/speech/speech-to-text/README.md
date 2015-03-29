@@ -14,3 +14,9 @@ To do:
 - create new dict (somewhat finished)
 - create new adaption (http://cmusphinx.sourceforge.net/wiki/tutorialadapt)
 - create shared library
+
+Bugs:
+- recently, the pocketsphinx engine started segfaulting (perhaps version update causes mem leaks from unthrottled analysis?)
+  - possible solutions:
+    - throttle audio stream analysis
+    - create more efficient analysis stream that doesn't use pocketsphinx

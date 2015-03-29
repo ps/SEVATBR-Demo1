@@ -24,32 +24,23 @@ void stop_program(int signum) {
 int main(int argc, char *argv[]) {
   signal(SIGINT, stop_program);
   // init robot and manual
-  if (robot_set(TENNIS_BALL_ROBOT) == -1) {
+if (robot_set(STANDARD_OUT) == -1) {
     return -1;
   }
-  manual_connect(MNL_CTRL);
-  //agent_create(AGENT_SIMPLE);
-
-  // change later
+  if (manual_connect(MNL_CTRL) == -1) {
+    return -1;
+  }
   manual_enable();
-  //agent_enable();
 
   // start getting communication accesses
   while (!stop_signal) {
     pose3d_t base;
     pose3d_t arm;
-    // choose input
-    //if (isOverriden()) {
-      manual_get_poses(&base, &arm);
-    //} else {
-      //agent_enable();
-      //agent_get_poses(&base, &arm);
-    //}
+    manual_get_poses(&base, &arm);
     robot_move(&base, &arm);
   }
 
   // clean up
-  //agent_destroy();
   manual_disconnect();
   robot_unset();
 

@@ -24,7 +24,7 @@ void stop_program(int signum) {
 int main(int argc, char *argv[]) {
   signal(SIGINT, stop_program);
   // init robot and manual
-  if (robot_set(TENNIS_BALL_ROBOT) == -1) {
+  if (robot_set(STANDARD_OUT) == -1) {
     return -1;
   }
   if (manual_connect(MNL_SRVR) == -1) {
