@@ -13,6 +13,7 @@ void stop(int signo) {
 int main() {
   pose3d_t base;
   pose3d_t arm;
+  signal(SIGINT, stop);
   manual_connect(MNL_SRVR);
   manual_enable();
 
